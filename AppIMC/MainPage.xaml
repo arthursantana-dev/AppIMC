@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppIMC.MainPage"
+             BackgroundColor="#CCC">
+
+    <ContentPage.Resources>
+
+        <Style TargetType="Label">
+
+            <Setter Property="TextColor" Value="Black"/>
+
+        </Style>
+
+        <Style TargetType="Entry">
+
+            <Setter Property="TextColor" Value="DarkGray"/>
+            <Setter Property="PlaceholderColor" Value="DarkGray"/>
+
+        </Style>
+        
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout VerticalOptions="Center">
+
+            <Label
+            Text="Cálculo de IMC 💪 (Índice de Massa Corporal)"
+            FontSize="Title"
+            HorizontalTextAlignment="Center"
+            FontAttributes="Bold"
+            TextTransform="Uppercase"
+            Padding="10"
+            Margin="0,20,0,20"
+            />
+
+            <Frame
+            CornerRadius="10"
+            Margin="10"
+            BackgroundColor="#EEE"
+            >
+
+                <StackLayout Margin="10">
+
+                    <Label Text="Sua altura (m):" HorizontalTextAlignment="Center"/>
+
+                    <Entry x:Name="entry_altura" Keyboard="Numeric" Placeholder="Exemplo: 1.80"/>
+
+                    <Label Text="Seu peso (kg):" HorizontalTextAlignment="Center"/>
+
+                    <Entry x:Name="entry_peso" Keyboard="Numeric" Placeholder="Exemplo: 90"/>
+
+                    <Button Text="Calcular 🧾" HorizontalOptions="Center" Clicked="Button_Clicked" Margin="0,0,0,20"/>
+
+                    <Label x:Name="label_resultados"
+                       TextColor="red"
+                       FontSize="Title"
+                       Text="Resultado"
+                       HorizontalTextAlignment="Center"
+                       />
+
+                    <Label
+                    Text="Valores de Referência"
+                    FontAttributes="bold"
+                    HorizontalTextAlignment="Center"
+                    TextTransform="Uppercase"
+                    />
+
+                    <TableView x:Name="table_valores_referencia"
+                           IsVisible="false" MinimumHeightRequest="30">
+
+                        <TableRoot>
+
+                            <TableSection>
+
+                                <TextCell Text="Abaixo de 17 - Muito Abaixo do Peso"/>
+                                <TextCell Text="Entre 17 e 18,49 - Abaixo do Peso"/>
+                                <TextCell Text="Entre 18,5 e 24,99 - Peso Normal"/>
+                                <TextCell Text="Entre 25 e 29,99 - Acima do Peso"/>
+                                <TextCell Text="Entre 30 e 34,99 - Obesidade I"/>
+                                <TextCell Text="Entre 35 e 39,99 - Obesidade II"/>
+                                <TextCell Text="Acima de 40 - Obesidade III"/>
+
+                            </TableSection>
+
+                        </TableRoot>
+
+                    </TableView>
+
+                    <Button Text="Reiniciar 🔃" Clicked="Button_Clicked_1" HorizontalOptions="Center"/>
+
+
+
+                </StackLayout>
+
+            </Frame>
+
+        </StackLayout>
+
+    </ScrollView>
+
+   
+
+</ContentPage>
